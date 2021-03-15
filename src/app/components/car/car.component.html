@@ -2,15 +2,17 @@
   <thead>
       <td>Id</td>
       <td>Marka</td>
+      <td>Model</td>
       <td>Renk</td>
       <td>Fiyat</td>
       <td>Açıklama</td>
       <td>Model</td>
   </thead>
   <tr *ngFor="let car of cars">
-      <td>{{car.id}}</td>
-      <td>{{car.name}}</td>
-      <td>{{car.colorId}}</td>
+      <td>{{car.carId}}</td>
+      <td>{{car.brandName}}</td>
+      <td>{{car.carName}}</td>
+      <td>{{car.colorName}}</td>
       <td>{{car.dailyPrice}}</td>
       <td>{{car.description}}</td>
       <td>{{car.modelYear}}</td>
