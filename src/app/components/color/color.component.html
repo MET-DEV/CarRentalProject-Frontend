@@ -1,0 +1,11 @@
+<div class="list-group">
+    <a href="cars" class="list-group-item list-group-item-action list-group-item-warning">Renkler</a>
+    
+      <tr *ngFor="let color of colors">
+        <button (click)="setCurrentColor(color)" 
+        routerLink="/cars/color/{{color.id}}"
+        type="button" [class]="getCurrentColor(color)">{{color.name}}</button>
+  
+      </tr>       
+</div>
+  
