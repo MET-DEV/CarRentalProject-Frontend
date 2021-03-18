@@ -1,22 +1,21 @@
 <div class="table">
-  <thead>
-      <td>Id</td>
-      <td>Marka</td>
-      <td>Model</td>
-      <td>Renk</td>
-      <td>Fiyat</td>
-      <td>Açıklama</td>
-      <td>Model</td>
-  </thead>
-  <tr *ngFor="let car of cars">
-      <td>{{car.carId}}</td>
-      <td>{{car.brandName}}</td>
-      <td>{{car.carName}}</td>
-      <td>{{car.colorName}}</td>
-      <td>{{car.dailyPrice}}</td>
-      <td>{{car.description}}</td>
-      <td>{{car.modelYear}}</td>
+  
+  <div class="row">
+    <tr *ngFor="let car of cars">
       
-  </tr>
+      <div class="card" style="width: 18rem;">
+        <img src="https://localhost:44392/uploads/{{car.path}}" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">{{car.carName}}</h5>
+          <p class="card-text">{{car.description}}. {{car.modelYear}} model. {{car.colorName}}    {{car.imagePath}}</p>
+          <a href="#" class="btn btn-primary">{{car.dailyPrice}}TL</a>
+        </div>
+      </div>
+    
+    
+    
+</tr>
+  </div>
+  
 </div>
   
