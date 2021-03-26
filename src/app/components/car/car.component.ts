@@ -1,9 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Car } from 'src/app/models/car';
+import { CarPageService } from 'src/app/services/car-page.service';
 
 
 import { CarService } from 'src/app/services/car.service';
+import { CarPageComponent } from '../car-page/car-page.component';
 
 @Component({
   selector: 'app-car',
@@ -16,7 +18,7 @@ export class CarComponent implements OnInit {
   cars:Car[]=[];
   
 
-  constructor(private carService:CarService, private activatedRoute:ActivatedRoute) { }
+  constructor(private carService:CarService, private activatedRoute:ActivatedRoute,private pageService:CarPageService) { }
   
 
   ngOnInit(): void {
@@ -43,5 +45,9 @@ export class CarComponent implements OnInit {
     this.carService.getCarsByBrand(colorId).subscribe(response=>this.cars=response.data);
     
   }
+  settCar(car:Car){
+    this.pageService.setCar(car)
+  }
+  
 
 }

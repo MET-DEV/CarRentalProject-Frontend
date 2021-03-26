@@ -1,0 +1,34 @@
+
+<figure class="figure mr-8">
+    <div>
+        <img src="https://localhost:44392/uploads/{{currentCar.path}}" class="figure-img img-fluid rounded" alt="...">
+        <figcaption class="figure-caption text-right"></figcaption>
+        
+    </div>
+    <div class="alert alert-primary" role="alert">
+        <h4 class="alert-heading">{{currentCar.brandName}} {{currentCar.carName}}</h4>
+        <p>{{currentCar.description}}</p>
+        <hr>
+        <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">Marka</th>
+                <th scope="col">Model</th>
+                <th scope="col">Model Yılı</th>
+                <th scope="col">Fiyat Bilgisi</th>
+
+              </tr>
+            </thead>
+            <tbody>
+                <tr>
+                  
+                  <td>{{currentCar.brandName}}</td>
+                  <td>{{currentCar.carName}}</td>
+                  <td>{{currentCar.modelYear}}</td>
+                  <td>{{currentCar.dailyPrice}}</td>
+                </tr>
+            </tbody>
+        </table>
+      </div>
+
+    

@@ -7,8 +7,8 @@
         <img src="https://localhost:44392/uploads/{{car.path}}" class="card-img-top" alt="...">
         <div class="card-body">
           <h5 class="card-title">{{car.carName}}</h5>
-          <p class="card-text">{{car.description}}. {{car.modelYear}} model. {{car.colorName}}    {{car.imagePath}}</p>
-          <a href="#" class="btn btn-primary">{{car.dailyPrice}}TL</a>
+          <p class="card-text">{{car.description}}. {{car.modelYear}} model. {{car.colorName}}    </p>
+          <a href="" class="btn btn-primary" (click)=settCar(car)   routerLink="/cars/car/{{car.carId}}">{{car.dailyPrice}}TL</a>
         </div>
       </div>
     

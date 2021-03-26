@@ -7,8 +7,7 @@ export interface Car{
     brandName:string
     colorName:string   
     modelYear:number
-    dailyPrice:number
-    
+    dailyPrice:number    
     description:string
     path:string
 
