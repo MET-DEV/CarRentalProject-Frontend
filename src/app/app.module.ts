@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import {HttpClientModule} from '@angular/common/http'
+import {HttpClientModule,HTTP_INTERCEPTORS} from '@angular/common/http'
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CarComponent } from './components/car/car.component';
@@ -8,6 +8,15 @@ import { BrandComponent } from './components/brand/brand.component';
 import { NaviComponent } from './components/navi/navi.component';
 import { ColorComponent } from './components/color/color.component';
 import { CarPageComponent } from './components/car-page/car-page.component';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations'
+import {FormsModule,ReactiveFormsModule} from '@angular/forms'
+
+import {ToastrModule} from 'ngx-toastr';
+import { FilterPipePipe } from './pipes/filter-pipe.pipe';
+import { LoginComponent } from './components/login/login.component'
+import { AuthInterceptor } from './interceptors/auth.interceptor';
+import { FilterBrandPipe } from './pipes/filter-brand.pipe';
+import { FilterColorPipe } from './pipes/filter-color.pipe';
 
 
 @NgModule({
@@ -17,14 +26,26 @@ import { CarPageComponent } from './components/car-page/car-page.component';
     BrandComponent,
     NaviComponent,
     ColorComponent,
-    CarPageComponent
+    CarPageComponent,
+    FilterPipePipe,
+    LoginComponent,
+    FilterBrandPipe,
+    FilterColorPipe
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    ToastrModule.forRoot({
+      positionClass:"toast-bottom-right"
+    }),
+    BrowserAnimationsModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
-  providers: [],
+  providers: [
+    {provide:HTTP_INTERCEPTORS, useClass:AuthInterceptor, multi:true}
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

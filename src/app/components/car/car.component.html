@@ -1,21 +1,23 @@
-<div class="table">
-  
-  <div class="row">
-    <tr *ngFor="let car of cars">
-      
-      <div class="card" style="width: 18rem;">
-        <img src="https://localhost:44392/uploads/{{car.path}}" class="card-img-top" alt="...">
-        <div class="card-body">
-          <h5 class="card-title">{{car.carName}}</h5>
-          <p class="card-text">{{car.description}}. {{car.modelYear}} model. {{car.colorName}}    </p>
-          <a href="" class="btn btn-primary" (click)=settCar(car)   routerLink="/cars/car/{{car.carId}}">{{car.dailyPrice}}TL</a>
-        </div>
-      </div>
-    
-    
-    
-</tr>
-  </div>
-  
+<div class="mb-3">
+  <label for="filterText" class="form-label">Model Ara</label>
+  <input type="text" [(ngModel)]="filterText" class="form-control" id="filterText" 
+  placeholder="model giriniz">
 </div>
-  
+<div *ngIf="filterText.length>2" class="alert alert-success">
+  {{filterText}} aradınız.
+</div>
+
+
+<div class="row">
+  <div class="col-sm-4" *ngFor="let car of cars| filterPipe:filterText">
+    <div class="card" style="width: 18rem;">
+      <img src="https://localhost:44392/uploads/{{car.path}}" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">{{car.brandName}} {{car.carName}}</h5>
+        <p class="card-text">{{car.description}}. {{car.modelYear}} model. {{car.colorName}}    </p>
+        <a href="" class="btn btn-primary" (click)=settCar(car)   routerLink="/cars/car/{{car.carId}}">{{car.dailyPrice}}TL</a>
+      </div>
+    </div>
+    
+  </div>
+</div>
