@@ -17,6 +17,9 @@ import { LoginComponent } from './components/login/login.component'
 import { AuthInterceptor } from './interceptors/auth.interceptor';
 import { FilterBrandPipe } from './pipes/filter-brand.pipe';
 import { FilterColorPipe } from './pipes/filter-color.pipe';
+import { RegisterComponent } from './components/register/register.component';
+import { BrandAddComponent } from './components/brand-add/brand-add.component';
+import { CarAddComponent } from './components/car-add/car-add.component';
 
 
 @NgModule({
@@ -30,7 +33,10 @@ import { FilterColorPipe } from './pipes/filter-color.pipe';
     FilterPipePipe,
     LoginComponent,
     FilterBrandPipe,
-    FilterColorPipe
+    FilterColorPipe,
+    RegisterComponent,
+    BrandAddComponent,
+    CarAddComponent
   ],
   imports: [
     BrowserModule,

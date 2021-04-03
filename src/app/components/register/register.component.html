@@ -3,9 +3,29 @@
  
     <body class="text-center col-md-4">
       <main class="form-signin">
-        <form [formGroup]="loginForm">
-          <h1 class="h3 mb-3 fw-normal">Giriş yap</h1>
+        <form [formGroup]="registerForm">
+          <h1 class="h3 mb-3 fw-normal">Kayıt Ol</h1>
           
+          <div class="form-floating">
+            <input
+              formControlName="firstName"
+              type="text"
+              class="form-control"
+              id="floatingInput"
+              placeholder="firstname"
+            />
+            <label for="floatingInput">First Name</label>
+          </div>
+          <div class="form-floating">
+            <input
+              formControlName="lastName"
+              type="text"
+              class="form-control"
+              id="floatingInput"
+              placeholder="lastName"
+            />
+            <label for="floatingInput">Last Name</label>
+          </div>
           <div class="form-floating">
             <input
               formControlName="email"
@@ -16,6 +36,7 @@
             />
             <label for="floatingInput">E-posta</label>
           </div>
+          
           <div class="form-floating">
             <input
             formControlName="password"
@@ -32,8 +53,8 @@
               <input type="checkbox" value="remember-me" /> Remember me
             </label>
           </div>
-          <button class="w-100 btn btn-lg btn-primary" (click)="login()">
-            Giriş yap
+          <button class="w-100 btn btn-lg btn-primary" (click)="register()">
+            Kayıt Ol
           </button>
           <p class="mt-5 mb-3 text-muted">&copy; 2017–2021</p>
         </form>
@@ -43,5 +64,3 @@
 
   
   
-
-
