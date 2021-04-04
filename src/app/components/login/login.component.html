@@ -4,7 +4,7 @@
     <body class="text-center col-md-4">
       <main class="form-signin">
         <form [formGroup]="loginForm">
-          <h1 class="h3 mb-3 fw-normal">Giriş yap</h1>
+          <h1 class="h3 mb-3 fw-normal text-white bg-dark">Giriş yap</h1>
           
           <div class="form-floating">
             <input
@@ -27,15 +27,15 @@
             <label for="floatingPassword">Parola</label>
           </div>
     
-          <div class="checkbox mb-3">
+          <div class="checkbox mb-3 text-white bg-dark">
             <label>
-              <input type="checkbox" value="remember-me" /> Remember me
+              <input  type="checkbox" value="remember-me" /> Remember me
             </label>
           </div>
           <button class="w-100 btn btn-lg btn-primary" (click)="login()">
             Giriş yap
           </button>
-          <p class="mt-5 mb-3 text-muted">&copy; 2017–2021</p>
+          <p class="mt-5 mb-3 text-light bg-dark">&copy; 2017–2021</p>
         </form>
       </main>
     </body>

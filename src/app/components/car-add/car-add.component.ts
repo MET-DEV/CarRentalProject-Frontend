@@ -13,6 +13,7 @@ export class CarAddComponent implements OnInit {
   constructor(private carService:CarService,private formBuilder:FormBuilder,private toastrService:ToastrService) { }
 
   ngOnInit(): void {
+    this.createCarAddForm()
   }
   createCarAddForm(){
     this.carAddForm=this.formBuilder.group({

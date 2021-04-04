@@ -4,7 +4,7 @@
     <body class="text-center col-md-4">
       <main class="form-signin">
         <form [formGroup]="registerForm">
-          <h1 class="h3 mb-3 fw-normal">Kayıt Ol</h1>
+          <h1 class="h3 mb-3 fw-normal text-white bg-dark">Kayıt Ol</h1>
           
           <div class="form-floating">
             <input
@@ -48,7 +48,7 @@
             <label for="floatingPassword">Parola</label>
           </div>
     
-          <div class="checkbox mb-3">
+          <div class="checkbox mb-3 bg-dark text-white">
             <label>
               <input type="checkbox" value="remember-me" /> Remember me
             </label>
@@ -56,7 +56,7 @@
           <button class="w-100 btn btn-lg btn-primary" (click)="register()">
             Kayıt Ol
           </button>
-          <p class="mt-5 mb-3 text-muted">&copy; 2017–2021</p>
+          <p class="mt-5 mb-3 text-light bg-dark">&copy; 2017–2021</p>
         </form>
       </main>
     </body>

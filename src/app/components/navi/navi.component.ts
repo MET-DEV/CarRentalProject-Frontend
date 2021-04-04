@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
   selector: 'app-navi',
@@ -6,10 +7,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./navi.component.css']
 })
 export class NaviComponent implements OnInit {
-
-  constructor() { }
+  log:boolean
+  constructor(private authService:AuthService) { }
 
   ngOnInit(): void {
+    this.setLog()
   }
-
+  setLog(){
+    this.log=this.authService.isAuthenticat()
+  }
 }

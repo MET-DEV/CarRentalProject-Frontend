@@ -6,6 +6,7 @@ import { CarPageComponent } from './components/car-page/car-page.component';
 import { CarComponent } from './components/car/car.component';
 import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
+import { LoginGuard } from './guards/login.guard';
 
 const routes: Routes = [
   {path:"",component:CarComponent},
@@ -16,7 +17,7 @@ const routes: Routes = [
   {path:"login", component:LoginComponent},
   {path:"register", component:RegisterComponent},
   {path:"brandadd", component:BrandAddComponent},
-  {path:"caradd", component:CarAddComponent}
+  {path:"caradd", component:CarAddComponent,canActivate:[LoginGuard]}
 ];
 
 @NgModule({

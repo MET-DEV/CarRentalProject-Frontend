@@ -1,13 +1,13 @@
 
 
 
-<a href="cars" class="list-group-item list-group-item-action list-group-item-primary">Renkler</a>
+<a href="cars" class="list-group-item list-group-item-action list-group-item-dark text-white bg-secondary">Renkler</a>
   <div class="mb-3">
     
     <input type="text" [(ngModel)]="filterText" class="form-control" id="filterText" 
     placeholder="renk giriniz">
   </div>
-<select class="form-select" multiple aria-label="multiple select example">
+<select class="form-select bg-secondary list-group-item-dark text-white" multiple aria-label="multiple select example">
   
   <option *ngFor="let color of colors|filterColor:filterText"routerLink="/cars/color/{{color.id}}" >{{color.name}}</option>
   

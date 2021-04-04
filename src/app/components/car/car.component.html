@@ -1,5 +1,7 @@
 <div class="mb-3">
-  <label for="filterText" class="form-label">Model Ara</label>
+  
+  <div class="p-3 mb-2 bg-secondary text-white">Model Ara</div>
+  
   <input type="text" [(ngModel)]="filterText" class="form-control" id="filterText" 
   placeholder="model giriniz">
 </div>
@@ -10,7 +12,8 @@
 
 <div class="row">
   <div class="col-sm-4" *ngFor="let car of cars| filterPipe:filterText">
-    <div class="card" style="width: 18rem;">
+    
+    <div class="card bg-secondary text-white" style="width: 18rem;">
       <img src="https://localhost:44392/uploads/{{car.path}}" class="card-img-top" alt="...">
       <div class="card-body">
         <h5 class="card-title">{{car.brandName}} {{car.carName}}</h5>

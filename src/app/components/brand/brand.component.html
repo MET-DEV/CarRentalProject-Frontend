@@ -1,11 +1,11 @@
 
-  <a href="cars" class="list-group-item list-group-item-action list-group-item-primary">Markalar</a>
+  <a href="cars" class="list-group-item list-group-item-action list-group-item-dark text-white bg-secondary">Markalar</a>
   <div class="mb-3">
     
     <input type="text" [(ngModel)]="filterText" class="form-control" id="filterText" 
     placeholder="marka giriniz">
   </div>
-  <select class="form-select" multiple aria-label="multiple select example">
+  <select class="form-select bg-secondary list-group-item-dark text-white" multiple aria-label="multiple select example">
     
     <option *ngFor="let brand of brands|filterBrand:filterText"routerLink="/cars/brand/{{brand.id}}" >{{brand.name}}</option>
     
